@@ -73,8 +73,8 @@ Make sure you have Node.js 18+ installed.
 1. **Clone the repository**
 
    ```bash
-   git clone https://github.com/your-username/webcraft.git
-   cd webcraft
+   git clone https://github.com/MGM50/WEBCRAFT.git
+   cd WEBCRAFT
    ```
 
 2. **Install dependencies**
