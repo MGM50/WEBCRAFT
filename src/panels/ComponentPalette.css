@@ -1,0 +1,122 @@
+/* ── Component Palette ── */
+
+.palette-body {
+  padding: var(--sp-2) !important;
+  gap: var(--sp-1);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Category header */
+.palette-category {
+  margin-bottom: var(--sp-1);
+}
+
+.palette-category__header {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  width: 100%;
+  padding: var(--sp-2) var(--sp-2);
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  border-radius: var(--radius-sm);
+  transition: background var(--duration-fast) var(--ease-out);
+}
+
+.palette-category__header:hover {
+  background: var(--bg-hover);
+  color: var(--text-primary);
+}
+
+.palette-category__icon {
+  width: 16px;
+  text-align: center;
+  font-size: 12px;
+}
+
+.palette-category__label {
+  flex: 1;
+  text-align: left;
+}
+
+.palette-category__chevron {
+  font-size: 14px;
+  transition: transform var(--duration-fast) var(--ease-out);
+  transform: rotate(0deg);
+}
+
+.palette-category__chevron.open {
+  transform: rotate(90deg);
+}
+
+/* Component items grid */
+.palette-items {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-1);
+  padding: var(--sp-1) var(--sp-1) var(--sp-2);
+  animation: fadeIn var(--duration-fast) var(--ease-out);
+}
+
+.palette-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: var(--sp-2) var(--sp-1);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+  cursor: grab;
+  transition: all var(--duration-fast) var(--ease-out);
+  user-select: none;
+}
+
+.palette-item:hover {
+  background: var(--accent-muted);
+  border-color: var(--accent);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-glow);
+}
+
+.palette-item:active {
+  cursor: grabbing;
+  transform: scale(0.95);
+}
+
+.palette-item__icon {
+  font-size: 18px;
+  line-height: 1;
+}
+
+.palette-item__label {
+  font-size: 10px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  white-space: nowrap;
+}
+
+/* Drag ghost (created dynamically) */
+.palette-drag-ghost {
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+  padding: 6px 14px;
+  background: var(--accent);
+  color: #fff;
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  pointer-events: none;
+}

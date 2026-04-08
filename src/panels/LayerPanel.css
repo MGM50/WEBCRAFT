@@ -1,0 +1,108 @@
+/* ── Layer Panel Styles ── */
+
+.layer-panel {
+  border-top: 1px solid var(--border-default);
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 160px;
+  overflow: hidden;
+}
+
+.layer-panel__body {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--sp-1) 0;
+}
+
+.layer-count {
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--text-muted);
+  background: var(--bg-surface);
+  padding: 1px 6px;
+  border-radius: 10px;
+  border: 1px solid var(--border-default);
+}
+
+/* Layer item */
+.layer-item {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-1);
+  padding: 4px 8px 4px 12px;
+  cursor: pointer;
+  transition: background var(--duration-fast) var(--ease-out);
+  font-size: 12px;
+  min-height: 28px;
+}
+
+.layer-item:hover {
+  background: var(--bg-hover);
+}
+
+.layer-item--selected {
+  background: var(--accent-muted) !important;
+  border-left: 2px solid var(--accent);
+}
+
+.layer-item__icon {
+  width: 12px;
+  font-size: 10px;
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+.layer-item__name {
+  flex: 1;
+  font-weight: 500;
+  color: var(--text-primary);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.layer-item__type {
+  font-size: 10px;
+  color: var(--text-disabled);
+  font-family: var(--font-mono);
+  margin-right: var(--sp-1);
+}
+
+.layer-item__actions {
+  display: flex;
+  gap: 2px;
+  opacity: 0;
+  transition: opacity var(--duration-fast) var(--ease-out);
+}
+
+.layer-item:hover .layer-item__actions {
+  opacity: 1;
+}
+
+.layer-action-btn {
+  border: none;
+  background: none;
+  font-size: 11px;
+  cursor: pointer;
+  padding: 2px;
+  border-radius: 3px;
+  color: var(--text-muted);
+  transition: all var(--duration-fast) var(--ease-out);
+  line-height: 1;
+}
+
+.layer-action-btn:hover {
+  background: var(--bg-active);
+}
+
+.layer-action-btn--delete:hover {
+  color: var(--error);
+}
+
+.layer-empty {
+  padding: var(--sp-4);
+  text-align: center;
+  font-size: 12px;
+  color: var(--text-disabled);
+}

@@ -1,0 +1,86 @@
+/* ── Toolbar Styles ── */
+
+/* Logo */
+.toolbar-logo {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  padding-right: var(--sp-2);
+}
+
+.toolbar-logo__icon {
+  font-size: 18px;
+  color: var(--accent);
+  filter: drop-shadow(0 0 6px rgba(99, 102, 241, 0.4));
+}
+
+.toolbar-logo__text {
+  font-size: 15px;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--accent) 0%, #a78bfa 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.02em;
+}
+
+/* Disabled state for buttons */
+.btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.btn:disabled:hover {
+  background: var(--bg-surface);
+  transform: none;
+}
+
+/* Active toggle */
+.btn.active {
+  background: var(--accent-muted);
+  color: var(--accent-hover);
+  border-color: rgba(99, 102, 241, 0.3);
+}
+
+/* Device presets */
+.toolbar-presets {
+  display: flex;
+  gap: 2px;
+}
+
+.toolbar-preset-btn {
+  gap: var(--sp-1);
+  font-size: 12px;
+}
+
+.toolbar-preset-label {
+  font-size: 11px;
+}
+
+/* Zoom */
+.toolbar-zoom {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.toolbar-zoom__value {
+  font-size: 11px;
+  font-weight: 600;
+  font-family: var(--font-mono);
+  color: var(--text-secondary);
+  min-width: 38px;
+  text-align: center;
+}
+
+.toolbar-zoom-reset {
+  font-size: 11px !important;
+  padding: 0 6px !important;
+}
+
+/* Element count */
+.toolbar-count {
+  font-size: 11px;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+}

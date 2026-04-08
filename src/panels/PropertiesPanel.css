@@ -1,0 +1,173 @@
+/* ── Properties Panel Styles ── */
+
+.properties-body {
+  padding: 0 !important;
+  gap: 0;
+}
+
+/* Empty state */
+.properties-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  gap: var(--sp-2);
+  text-align: center;
+}
+
+.properties-empty__icon {
+  font-size: 32px;
+  opacity: 0.3;
+  color: var(--text-muted);
+}
+
+.properties-empty__text {
+  font-size: 12px;
+  color: var(--text-muted);
+  max-width: 160px;
+}
+
+/* Action buttons in header */
+.prop-actions {
+  display: flex;
+  gap: 2px;
+}
+
+/* Sections */
+.prop-section {
+  border-bottom: 1px solid var(--border-default);
+}
+
+.prop-section__header {
+  display: flex;
+  align-items: center;
+  padding: var(--sp-2) var(--sp-3);
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-secondary);
+  cursor: pointer;
+  user-select: none;
+  transition: background var(--duration-fast) var(--ease-out);
+  list-style: none;
+}
+
+.prop-section__header::-webkit-details-marker {
+  display: none;
+}
+
+.prop-section__header::before {
+  content: '›';
+  margin-right: var(--sp-2);
+  transition: transform var(--duration-fast) var(--ease-out);
+  font-size: 13px;
+}
+
+.prop-section[open] > .prop-section__header::before {
+  transform: rotate(90deg);
+}
+
+.prop-section__header:hover {
+  background: var(--bg-hover);
+}
+
+.prop-section__body {
+  padding: var(--sp-1) var(--sp-3) var(--sp-3);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+  animation: fadeIn 0.15s ease;
+}
+
+/* Property row */
+.prop-row {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+}
+
+.prop-row__label {
+  flex-shrink: 0;
+  width: 54px;
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+.prop-row__input {
+  flex: 1;
+  min-width: 0;
+}
+
+/* Grid for X/Y/W/H */
+.prop-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-2);
+}
+
+/* Color input */
+.prop-color-input {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-1);
+  flex: 1;
+}
+
+.prop-color-swatch {
+  width: 26px;
+  height: 26px;
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  padding: 0;
+  background: none;
+  flex-shrink: 0;
+}
+
+.prop-color-swatch::-webkit-color-swatch-wrapper {
+  padding: 2px;
+}
+
+.prop-color-swatch::-webkit-color-swatch {
+  border-radius: 2px;
+  border: none;
+}
+
+.prop-color-text {
+  flex: 1;
+  min-width: 0;
+}
+
+/* Type badge */
+.prop-type-badge {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--accent);
+  background: var(--accent-muted);
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
+  text-transform: capitalize;
+}
+
+/* Select styling */
+.prop-row__input[type="number"] {
+  font-family: var(--font-mono);
+  font-size: 11px;
+}
+
+select.input {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6H0z' fill='%2364748b'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+  padding-right: 24px;
+  cursor: pointer;
+}
+
+select.input option {
+  background: var(--bg-tertiary);
+  color: var(--text-primary);
+}

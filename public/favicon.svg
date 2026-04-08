@@ -1,0 +1,46 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Background Gradient for the Logo Base -->
+    <linearGradient id="icon_bg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop stop-color="#1E293B"/>
+      <stop offset="1" stop-color="#0F172A"/>
+    </linearGradient>
+    
+    <!-- Glowing Border Gradient -->
+    <linearGradient id="icon_border" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop stop-color="#818CF8"/>
+      <stop offset="1" stop-color="#38BDF8"/>
+    </linearGradient>
+
+    <!-- Content Block Gradients -->
+    <linearGradient id="panel_left" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop stop-color="#818CF8"/>
+      <stop offset="1" stop-color="#4F46E5"/>
+    </linearGradient>
+
+    <linearGradient id="panel_main" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop stop-color="#38BDF8"/>
+      <stop offset="1" stop-color="#0EA5E9"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Base Rounded Rectangle for App Icon -->
+  <rect x="16" y="16" width="480" height="480" rx="120" fill="url(#icon_bg)" stroke="url(#icon_border)" stroke-width="12"/>
+  
+  <!-- Abstract Browser / Builder Canvas Window -->
+  <g transform="translate(106, 120)">
+    <!-- Top toolbar simulator -->
+    <rect x="0" y="0" width="300" height="36" rx="18" fill="#334155" />
+    <circle cx="30" cy="18" r="8" fill="#4F46E5" />
+    <circle cx="65" cy="18" r="8" fill="#0EA5E9" />
+    
+    <!-- Left panel component (Sidebar/Palette) -->
+    <rect x="0" y="66" width="90" height="200" rx="16" fill="url(#panel_left)" />
+    
+    <!-- Main content component (Canvas Workspace) -->
+    <rect x="120" y="66" width="180" height="120" rx="16" fill="url(#panel_main)" />
+    
+    <!-- Bottom component (Properties / Code export) -->
+    <rect x="120" y="216" width="180" height="50" rx="16" fill="#475569" opacity="0.8"/>
+  </g>
+</svg>

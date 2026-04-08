@@ -1,0 +1,83 @@
+/* ── Canvas Styles ── */
+
+.canvas-area {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  background: var(--bg-primary);
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.canvas-surface {
+  position: absolute;
+  top: 60px;
+  left: 60px;
+  border-radius: var(--radius-sm);
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.06),
+    var(--shadow-lg);
+  transition: box-shadow var(--duration-normal) var(--ease-out);
+}
+
+.canvas-surface:hover {
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.1),
+    var(--shadow-lg);
+}
+
+/* Zoom info badge */
+.canvas-info-badge {
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+  padding: 4px 10px;
+  font-size: 11px;
+  font-weight: 600;
+  font-family: var(--font-mono);
+  color: var(--text-muted);
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-md);
+  z-index: 10;
+  user-select: none;
+}
+
+/* Empty state */
+.canvas-empty {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  pointer-events: none;
+  z-index: 5;
+  animation: fadeIn var(--duration-slow) var(--ease-out);
+}
+
+.canvas-empty__icon {
+  font-size: 48px;
+  color: var(--text-disabled);
+  margin-bottom: var(--sp-4);
+  opacity: 0.5;
+}
+
+.canvas-empty__text {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--text-muted);
+  margin-bottom: var(--sp-2);
+}
+
+.canvas-empty__hint {
+  font-size: 12px;
+  color: var(--text-disabled);
+}
+
+/* Drop highlight when dragging over canvas */
+.canvas-area.drag-over .canvas-surface {
+  box-shadow:
+    0 0 0 2px var(--accent),
+    0 0 30px rgba(99, 102, 241, 0.15);
+}
